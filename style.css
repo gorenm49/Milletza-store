@@ -1405,6 +1405,8 @@ button {
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* --- Large Desktop / Small Laptop (≤1200px) --- */
 @media (max-width: 1200px) {
   :root {
     --container-padding: 40px;
@@ -1417,8 +1419,18 @@ button {
   .nav-links {
     gap: var(--space-lg);
   }
+
+  .nav-links a {
+    font-size: 0.82rem;
+  }
+
+  .footer-main {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: var(--space-xl);
+  }
 }
 
+/* --- Tablet Landscape / Small Laptop (≤1024px) --- */
 @media (max-width: 1024px) {
   .nav-links {
     display: none;
@@ -1428,21 +1440,61 @@ button {
     display: block;
   }
 
+  .btn-shop-now {
+    display: none;
+  }
+
+  .avatar {
+    display: none;
+  }
+
   .hero .container {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
   }
 
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-tags {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
   .hero-image {
     max-height: 400px;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .hero-image img {
     height: 400px;
   }
 
+  .hero-image-badge {
+    left: 10px;
+    bottom: 20px;
+  }
+
   .categories-grid {
     grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    height: 320px;
   }
 
   .products-grid {
@@ -1459,6 +1511,11 @@ button {
 
   .rtc-image img {
     min-height: 350px;
+    max-height: 450px;
+  }
+
+  .ready-to-cook .section-title {
+    font-size: 2.4rem;
   }
 
   .why-grid {
@@ -1475,74 +1532,139 @@ button {
 
   .footer-main {
     grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 }
 
+/* --- Tablet Portrait (≤768px) --- */
 @media (max-width: 768px) {
   :root {
     --container-padding: 20px;
+  }
+
+  .announcement-bar {
+    font-size: 0.72rem;
+    padding: 8px var(--space-md);
+    flex-wrap: wrap;
+    gap: 4px;
+    line-height: 1.4;
+  }
+
+  .announcement-bar .code {
+    padding: 2px 8px;
+    font-size: 0.7rem;
+  }
+
+  .header .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .logo-text h1 {
+    font-size: 1.35rem;
+  }
+
+  .hero {
+    padding: var(--space-3xl) 0 var(--space-2xl);
   }
 
   .hero h2 {
     font-size: 2.4rem;
   }
 
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 6px 16px;
+  }
+
   .hero-description {
     font-size: 1rem;
   }
 
+  .hero-image img {
+    height: 320px;
+  }
+
   .hero-stats {
     flex-wrap: wrap;
-    gap: var(--space-xl);
+    gap: var(--space-lg);
+  }
+
+  .hero-stat h3 {
+    font-size: 1.8rem;
+  }
+
+  .hero-image-badge {
+    padding: 10px 14px;
+    gap: var(--space-sm);
+  }
+
+  .hero-image-badge .badge-text h4 {
+    font-size: 0.85rem;
+  }
+
+  .hero-image-badge .badge-text p {
+    font-size: 0.68rem;
+  }
+
+  .hero-image-badge .active-tag {
+    display: none;
+  }
+
+  .features-bar {
+    padding: var(--space-xl) 0 var(--space-2xl);
   }
 
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .feature-card {
+    padding: var(--space-lg);
+  }
+
   .section-title {
     font-size: 2rem;
   }
 
-  .products-grid {
-    grid-template-columns: 1fr;
+  .section-subtitle {
+    font-size: 1rem;
   }
 
-  .why-grid {
-    grid-template-columns: 1fr;
+  .why-milletza .section-title {
+    font-size: 2.2rem;
   }
 
-  .rtc-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-stats {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .footer-main {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn-primary, .btn-secondary {
-    justify-content: center;
+  .categories {
+    padding: var(--space-3xl) 0;
   }
 
   .categories-header {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-md);
+  }
+
+  .category-card {
+    height: 280px;
+  }
+
+  .category-overlay h3 {
+    font-size: 1.3rem;
+  }
+
+  .products {
+    padding: var(--space-3xl) 0;
   }
 
   .products-header {
@@ -1554,25 +1676,221 @@ button {
     overflow-x: auto;
     width: 100%;
     padding-bottom: var(--space-sm);
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
-  .announcement-bar {
-    font-size: 0.75rem;
-    padding: 8px var(--space-md);
+  .product-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image-wrap {
+    height: 240px;
+  }
+
+  .why-milletza {
+    padding: var(--space-3xl) 0;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ready-to-cook {
+    padding: var(--space-3xl) 0;
+  }
+
+  .rtc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rtc-image img {
+    min-height: 280px;
+    max-height: 380px;
+  }
+
+  .about {
+    padding: var(--space-3xl) 0;
+  }
+
+  .about-image img {
+    height: 300px;
+  }
+
+  .about-content .section-title {
+    font-size: 2rem;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-stat {
+    padding: var(--space-md);
+  }
+
+  .about-stat h3 {
+    font-size: 1.5rem;
+  }
+
+  .newsletter {
+    padding: var(--space-3xl) 0;
+  }
+
+  .newsletter .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
+  .footer-bottom-left {
+    flex-direction: column;
+  }
+
+  .footer-newsletter input {
+    width: 180px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary, .btn-secondary {
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  .mobile-nav {
+    width: 280px;
+    right: -280px;
   }
 }
 
-@media (max-width: 480px) {
+/* --- Large Phone / Small Tablet (≤600px) --- */
+@media (max-width: 600px) {
   .hero h2 {
-    font-size: 2rem;
+    font-size: 2.1rem;
+  }
+
+  .hero-stats {
+    gap: var(--space-md);
+  }
+
+  .hero-stat h3 {
+    font-size: 1.6rem;
+  }
+
+  .hero-stat p {
+    font-size: 0.78rem;
+  }
+
+  .hero-image-badge {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: var(--space-md);
+    width: fit-content;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
   }
 
+  .feature-card {
+    padding: var(--space-md);
+  }
+
+  .feature-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 1.1rem;
+  }
+
+  .category-card {
+    height: 250px;
+  }
+
+  .category-overlay {
+    padding: var(--space-lg);
+  }
+
+  .category-overlay h3 {
+    font-size: 1.15rem;
+  }
+
+  .category-overlay p {
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .products-grid {
+    gap: var(--space-lg);
+  }
+
+  .product-image-wrap {
+    height: 220px;
+  }
+
+  .product-info h3 {
+    font-size: 1.05rem;
+  }
+
+  .why-card {
+    padding: var(--space-lg);
+  }
+
+  .why-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .rtc-item {
+    padding: var(--space-md);
+  }
+
   .about-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .about-stat h3 {
+    font-size: 1.3rem;
+  }
+
+  .about-stat p {
+    font-size: 0.72rem;
   }
 
   .newsletter-form {
@@ -1582,8 +1900,427 @@ button {
     padding: var(--space-sm);
   }
 
+  .newsletter-form input {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
   .newsletter-form button {
     width: 100%;
+    padding: 12px 24px;
+  }
+
+  .footer-badges {
+    flex-wrap: wrap;
+  }
+
+  .footer-newsletter {
+    width: 100%;
+  }
+
+  .footer-newsletter input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-copyright {
+    font-size: 0.72rem;
+  }
+}
+
+/* --- Standard Phone (≤480px) --- */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 16px;
+  }
+
+  .announcement-bar {
+    font-size: 0.68rem;
+    padding: 6px var(--space-sm);
+  }
+
+  .announcement-bar .icon {
+    display: none;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .logo-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .logo-text p {
+    font-size: 0.58rem;
+  }
+
+  .logo {
+    gap: var(--space-sm);
+  }
+
+  .nav-actions {
+    gap: var(--space-md);
+  }
+
+  .nav-action-btn {
+    font-size: 1.15rem;
+  }
+
+  .hero {
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+    padding: 5px 12px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .hero-image img {
+    height: 250px;
+    border-radius: var(--radius-lg);
+  }
+
+  .hero-stats {
+    gap: var(--space-md);
+    padding-top: var(--space-lg);
+  }
+
+  .hero-stat h3 {
+    font-size: 1.4rem;
+  }
+
+  .hero-tags {
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-tags span {
+    font-size: 0.78rem;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .category-card {
+    height: 220px;
+  }
+
+  .category-overlay {
+    padding: var(--space-md);
+  }
+
+  .category-overlay .product-count {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+
+  .category-overlay h3 {
+    font-size: 1.05rem;
+  }
+
+  .product-image-wrap {
+    height: 200px;
+  }
+
+  .product-info {
+    padding: var(--space-md);
+  }
+
+  .product-info h3 {
+    font-size: 1rem;
+  }
+
+  .current-price {
+    font-size: 1.1rem;
+  }
+
+  .btn-add-cart {
+    padding: 9px;
+    font-size: 0.8rem;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
+
+  .why-milletza .section-title {
+    font-size: 1.8rem;
+  }
+
+  .why-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .why-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .why-card p {
+    font-size: 0.82rem;
+  }
+
+  .ready-to-cook .section-title {
+    font-size: 1.8rem;
+  }
+
+  .rtc-description {
+    font-size: 0.92rem;
+  }
+
+  .rtc-image img {
+    min-height: 220px;
+    max-height: 300px;
+  }
+
+  .about-image img {
+    height: 250px;
+  }
+
+  .about-content .section-title {
+    font-size: 1.7rem;
+  }
+
+  .about-text {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .about-stat {
+    padding: var(--space-md);
+  }
+
+  .newsletter .section-title {
+    font-size: 1.8rem;
+  }
+
+  .newsletter .section-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .newsletter-note {
+    font-size: 0.72rem;
+  }
+
+  .footer {
+    padding: var(--space-2xl) 0 0;
+  }
+
+  .footer-brand p {
+    font-size: 0.82rem;
+  }
+
+  .footer-col h4 {
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .footer-col ul li a {
+    font-size: 0.82rem;
+  }
+
+  .footer-address {
+    font-size: 0.78rem;
+  }
+
+  .footer-phone {
+    font-size: 0.78rem;
+  }
+
+  .footer-bottom {
+    padding: var(--space-md) 0;
+  }
+
+  .back-to-top {
+    width: 42px;
+    height: 42px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1rem;
+  }
+}
+
+/* --- Small Phone (≤360px) — e.g., iPhone SE, Galaxy S series --- */
+@media (max-width: 360px) {
+  :root {
+    --container-padding: 12px;
+  }
+
+  .announcement-bar {
+    font-size: 0.62rem;
+  }
+
+  .announcement-bar .code {
+    font-size: 0.6rem;
+    padding: 1px 6px;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .logo-text h1 {
+    font-size: 1.05rem;
+  }
+
+  .logo-text p {
+    font-size: 0.52rem;
+  }
+
+  .hero h2 {
+    font-size: 1.55rem;
+  }
+
+  .hero-badge {
+    font-size: 0.58rem;
+    padding: 4px 10px;
+  }
+
+  .hero-description {
+    font-size: 0.82rem;
+  }
+
+  .hero-image img {
+    height: 200px;
+  }
+
+  .hero-stat h3 {
+    font-size: 1.2rem;
+  }
+
+  .hero-stat p {
+    font-size: 0.7rem;
+  }
+
+  .hero-tags span {
+    font-size: 0.7rem;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.82rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+
+  .category-card {
+    height: 190px;
+  }
+
+  .category-overlay h3 {
+    font-size: 0.95rem;
+  }
+
+  .category-overlay p {
+    font-size: 0.72rem;
+  }
+
+  .product-image-wrap {
+    height: 180px;
+  }
+
+  .product-info h3 {
+    font-size: 0.92rem;
+  }
+
+  .feature-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .feature-card p {
+    font-size: 0.78rem;
+  }
+
+  .why-milletza .section-title {
+    font-size: 1.5rem;
+  }
+
+  .ready-to-cook .section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-content .section-title {
+    font-size: 1.45rem;
+  }
+
+  .about-image img {
+    height: 200px;
+  }
+
+  .newsletter .section-title {
+    font-size: 1.5rem;
+  }
+
+  .newsletter-form input {
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+
+  .newsletter-form button {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+
+  .mobile-nav {
+    width: 260px;
+    right: -260px;
+  }
+
+  .mobile-nav a {
+    font-size: 0.95rem;
+    padding: var(--space-sm) 0;
+  }
+
+  .back-to-top {
+    width: 38px;
+    height: 38px;
+    bottom: 16px;
+    right: 16px;
+    font-size: 0.9rem;
   }
 }
 
